@@ -1,24 +1,52 @@
 <div class="container mt-5">
   <h2>Formulario de contacto</h2>
-  <form (ngSubmit)=”contactForm(form.value)” #form=”ngForm”>
-  <div class=”form-group”>
+  <form (ngSubmit)='contactForm(form.value)' #form='ngForm'>
+  <div class='form-group'>
   <label>Nombre</label>
-  <input type=”text” class=”form-control” name=”nombre” ngModel>
+  <input type='text' class='form-control' name='nombre' ngModel required>
   </div>
-  <div class=”form-group”>
+  <div class='form-group'>
   <label>Asunto</label>
-  <input type=”text” class=”form-control” name=”asunto” ngModel>
+  <input type='text' class='form-control' name='asunto' ngModel required>
   </div>
-  <div class=”form-group”>
+  <div class='form-group'>
   <label>E-mail</label>
-  <input type=”email” class=”form-control” name=”email” ngModel>
+  <input type='email' class='form-control' name='email' ngModel required>
   </div>
-  <div class=”form-group”>
+  <div class='form-group'>
   <label>Mensaje</label>
-  <textarea class=”form-control” cols="30" rows="6" name=”mensaje” ngModel></textarea>
+  <textarea class='form-control' cols="30" rows="6" name='mensaje' ngModel></textarea>
   </div>
-  <button type=”submit” class=”btn btn-primary”>Enviar</button>
+  <button type='submit' class='btn btn-primary'>Enviar</button>
   </form>
  </div>
-
-<router-outlet></router-outlet>
+ 
+ <section class="newsletter section">
+  <div class="container-sm">
+      <div class="newsletter-inner section-inner">
+          <div class="newsletter-header text-center is-revealing">
+              <h2 class="section-title mt-0">Stay in the know</h2>
+              <p class="section-paragraph">Lorem ipsum is common placeholder text used to demonstrate the graphic elements of a document or visual presentation</p>
+          </div>
+          <div class="footer-form newsletter-form field field-grouped is-revealing">
+              <div class="control control-expanded">
+                  <form (ngSubmit)='contactForm(form.value)' #form='ngForm'>
+                      <div class='input'>
+                      <label>Nombre</label>
+                      <input type='text' class='form-control' name='nombre' ngModel required>
+                      </div>
+                      <div class='input'>
+                      <label>Asunto</label>
+                      <input type='text' class='form-control' name='asunto' ngModel required>
+                      </div>
+                      <div class='input'>
+                      <label>E-mail</label>
+                      <input type='email' class='form-control' name='email' ngModel required>
+                      </div>
+                      <button type='submit' class='button button-primary button-block button-shadow'>Enviar</button>
+                      </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
