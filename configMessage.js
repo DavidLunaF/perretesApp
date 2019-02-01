@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+
 module.exports = (formulario) => {
  var transporter = nodemailer.createTransport({
  service: 'gmail',

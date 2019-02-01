@@ -12,6 +12,7 @@ export class AppComponent {
   constructor(public _MessageService: MessageService) {
   }
    contactForm(form) {
+     console.log("enviando")
    this._MessageService.sendMessage(form).subscribe(() => {
        swal({
          title: 'Formulario de contacto',
@@ -21,3 +22,4 @@ export class AppComponent {
    });
    }
 }
+ 
