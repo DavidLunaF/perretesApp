@@ -9,6 +9,7 @@ app.use(cors())
 
 app.post('/formulario', (req, res) => {
     configMensaje(req.body);
+    console.log(req.body.name)
     res.status(200).send();
 })
 app.listen(3000, () => {

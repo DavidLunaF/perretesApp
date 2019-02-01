@@ -1,25 +1,24 @@
 const nodemailer = require('nodemailer');
 
 module.exports = (formulario) => {
- var transporter = nodemailer.createTransport({
- service: 'gmail',
- auth: {
- user: 'david.luna.fernandez@gmail.com', // Cambialo por tu email
- pass: 'd992d992daki' // Cambialo por tu password
- }
- });
-const mailOptions = {
- from: '"${formulario.nombre} 👻" <${formulario.email}>',
- to: 'david.luna@upplication', // Cambia esta parte por el destinatario
- subject: formulario.asunto,
- html: '<strong>Nombre:</strong> ${formulario.nombre} <br/>' 
-    + '<strong>E-mail:</strong> ${formulario.email} <br/>'
-    + '<strong>Mensaje:</strong> ${formulario.mensaje}'
- };
-transporter.sendMail(mailOptions, function (err, info) {
- if (err)
- console.log(err)
- else
- console.log(info);
- });
+   var transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+      user: 'david.luna.fernandez@gmail.com', // Cambialo por tu email
+      pass: 'd992d992daki' // Cambialo por tu password
+      }
+   });
+   const mailOptions = {
+      from: formulario.name + ' 👻 <${formulario.email}>',
+      to: 'david.luna.fernandez@gmail.com', // Cambia esta parte por el destinatario
+      subject: formulario.subject,
+      html: 'mail from' + formulario.mail
+   };
+
+   transporter.sendMail(mailOptions, function (err, info) {
+   if (err)
+   console.log(err)
+   else
+   console.log(info);
+   });
 }
